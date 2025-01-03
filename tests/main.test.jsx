@@ -14,19 +14,19 @@ describe('Top Spots', () => {
             render(<App />);
         });
     });
-    
+
     afterEach(() => {
         cleanup();
         mock.reset();
     });
-    
+
     it('should show a title of "San Diego Top Spots"', async () => {
         await waitFor(() => {
             expect(screen.getByRole('heading', { name: /San Diego Top Spots/i })).toBeInTheDocument();
         });
     });
 
-    it('should show a tagline of "A list of the top 30 places to see in San Diego, California"', async () => {
+    it('should show a tagline of "A list of the top 30 places to see in San Diego, California" in a <p> tag', async () => {
         await waitFor(() => {
             expect(screen.getByText(/A list of the top 30 places to see in San Diego, California/i)).toBeInTheDocument();
         });
@@ -60,7 +60,7 @@ describe('Top Spots', () => {
 
     it('should show TopSpot description in each TopSpot component using a <p> element', async () => {
         await waitFor(() => {
-            const descriptions = screen.getAllByText((content, element) => element.tagName.toLowerCase() === 'p').map(el => el.textContent);
+            const descriptions = screen.getAllByTestId('topspot').map(el => el.querySelector('p').textContent);
             expect(descriptions.length).toBe(topspots.data.length);
             descriptions.forEach((description, i) => {
                 const matchingSpot = topspots.data.find(topspot => topspot.description === description);
