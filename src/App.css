@@ -1,1 +1,68 @@
-/* Add your custom css here */
+/* App.css */
+
+/* Set a full background image */
+body {
+  background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1844&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Add a semi-transparent overlay to enhance text readability */
+.container {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+
+/* Center title and subtitle */
+h1,
+p {
+  text-align: center;
+}
+
+h1 {
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Card styling */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Centered button at bottom */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.btn {
+  align-self: center;
+  margin-top: auto;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
